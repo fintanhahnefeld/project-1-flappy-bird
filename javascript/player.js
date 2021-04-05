@@ -7,7 +7,7 @@ class Player {
         this.velocity = 5;
         this.width = 45;
         this.height = 33;
-        this.x = 160 ;
+        this.x = 160;
         this.y = height/5;
     }
 
@@ -22,6 +22,7 @@ class Player {
         }
         // draw image
         image(game.playerImage, this.x, this.y, this.width, this.height);
+
     }
 
     jump() {

@@ -24,17 +24,32 @@ class Game {
         clear();
         this.background.draw();
 
+        // add pipes to pipe array and call obstacle.draw()
         if (frameCount % 160 === 0) {
-            this.pipesArray.push(new Obstacle(this.pipeTop, this.pipeBottom))
-            // this.pipesArray.push(new Obstacle(this.pipeBottom))
-            // console.log(this.obstacles);
+            this.pipesArray.push(new Obstacle(this.pipeTop, this.pipeBottom))    
         }
+
         this.pipesArray.forEach(function(obstacle) {
-            obstacle.draw();
-        })
-        
+            obstacle.draw();        
+    })
+
+        // remove off-screen pipes
+        this.pipesArray = this.pipesArray.filter(obstacle => {           
+        if (obstacle.x < -80) {
+            return false
+        } else {
+            return true
+            
+        }
+    })
+                
         this.ground.draw();
         this.player.draw();
+
+        this.pipesArray.forEach((obstacle) => {
+            if (obstacle.collision(this.player) === true){
+            }  
+        });
         
     }
-}
+} 
