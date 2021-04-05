@@ -1,29 +1,25 @@
-let x = 0;
+const game = new Game();
+
 
 function preload() {
-    
+    game.preload();
 }
 
 function setup() {
     createCanvas(600, 600)
-
+    game.setup();
     
 }
 
 function draw() {
-    background(100)
-    fill(255)
-
-    circle(100, 500, 50)
-    clear();
-    
-
+    game.draw();
 }
 
 function keyPressed() { 
     // spacebar makes the player jump
     if (keyCode === 32) {
-        console.log('space bar pressed')
+        // console.log('space bar pressed')
+        game.player.jump();
     }
 }
 
