@@ -1,7 +1,6 @@
 class Background {
     constructor() {
         this.imgx = 0;
-        this.floorx = 0;
     }
 
     draw() {
@@ -14,7 +13,14 @@ class Background {
         if ( this.imgx <=  - width) {
             this.imgx = 0;
         }
+}
+}
 
+class Ground {
+    constructor() {
+        this.floorx = 0;
+    }
+    draw() {
         // lines
         stroke('#272b30')
         strokeWeight(2)
