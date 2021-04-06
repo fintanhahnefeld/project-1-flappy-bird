@@ -37,8 +37,8 @@ class Ground {
         this.floorx -= 2;
         if ( this.floorx <=  - width) {
             this.floorx = 0;
-        }
-
+        } 
+ 
         // more lines
         stroke('#48771b')
         strokeWeight(2)
@@ -54,4 +54,4 @@ class Ground {
 
 
     }
-}
+}  

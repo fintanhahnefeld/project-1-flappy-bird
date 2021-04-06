@@ -5,7 +5,8 @@ class Game {
         this.floor;
         this.pipeTop;
         this.pipeBottom;
-        this.preGame = true;
+        this.isPreGame = true;
+        this.isGameOver = false;
     }
 
     setup() {
@@ -25,9 +26,9 @@ class Game {
         clear();
         this.background.draw();
 
-        // add pipes to pipe array and call obstacle.draw()
-        if (this.preGame === false) {
-        if (frameCount % 160 === 0) {
+        // ADD PIPES TO PIPEARRAY AND CALL OBSTACLE.DRAW()
+        if (this.isPreGame === false) {
+        if (frameCount % 120 === 0) {
             this.pipesArray.push(new Obstacle(this.pipeTop, this.pipeBottom))    
         }
         }
@@ -36,7 +37,7 @@ class Game {
             obstacle.draw();        
     })
 
-        // remove off-screen pipes
+        // REMOVE OFF-SCREEN PIPES
         this.pipesArray = this.pipesArray.filter(obstacle => {           
         if (obstacle.x < -80) {
             return false
@@ -49,17 +50,26 @@ class Game {
         this.ground.draw();
         this.player.draw();
 
+        // CALL COLLISION CONDITION
         this.pipesArray.forEach((obstacle) => {
             if (obstacle.collision(this.player) === true){
                 return true;
             }  
         });
         
+        if (game.isGameOver === true) {
+            document.querySelector('h2 span').style.visibility="hidden";   
+            document.querySelector('#game-over').style.visibility="visible";   
+        }
 
     }
 
     gameOver() {
-        noLoop();
-        text('GAME OVER', 110, 200)
+        // noLoop();
+        // game.player.div.hide() 
+        //  
+        game.isGameOver = true;
+        // text(' ', width/2 -16 ,120)
+
     }
-} 
+}  

@@ -12,42 +12,42 @@ class Player {
         this.yspeed = 1;
     }
 
-    scoreKeeper() {
-        textFont('VT323')
-        stroke(0,0,0)
-        strokeWeight(5)
-        textSize(64);
-        fill(255,255,255)
-        text(this.score, width/2 -16 ,120)
-    }
-
     draw() {
 
-        this.scoreKeeper()
+        // if (game.isGameOver === false) {
+        //     textFont('VT323')
+        //     stroke(0,0,0)
+        //     strokeWeight(3)
+        //     textSize(64);
+        //     fill(255,255,255)
+        //     let x = text(this.score, width/2 -16 ,120)
+        //     x.hide();
+        // } 
         
-
-           this.y = this.y + this.yspeed;
-            if (this.y >= 260){this.y = this.y - this.yspeed;}
-            if (this.y <= 240){this.y = this.y + this.yspeed;}
+        // PREGAME HOVER ANIMATION
+        this.y = this.y + this.yspeed;
+        if (this.y >= 260) {this.y = this.y - this.yspeed;}
+        if (this.y <= 240) {this.y = this.y + this.yspeed;}
         
     
-        // gravity 
-        if (game.preGame === false) {
+        // GRAVITY
+        if (game.isPreGame === false) {
         this.velocity += this.gravity;
         this.y += this.velocity;
         }
 
-        // constrain bottom   
+        // CONSTRAIN FLOOR  
         if (this.y >= height - this.height -70) {
             this.y = height - this.height -70;
+            game.gameOver();
         }
-        // draw image
+        // DRAW PLAYER
         image(game.playerImage, this.x, this.y, this.width, this.height);
 
     }
 
     jump() {
-        // controls jump height
-        this.velocity = - 11.3;
+        //  CONTROL JUMP HEIGHT
+        this.velocity = - 11;
     }
 }

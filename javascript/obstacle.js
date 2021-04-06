@@ -46,20 +46,21 @@ class Obstacle {
         // TOP PIPE COLLISION CHECK
         if (birdRight > pipe1Left && birdLeft < pipe1Right && birdTop < pipe1Bottom && birdBottom > pipe1Top) { 
             game.gameOver();
+            
         }
         
         // BOTTOM PIPE COLLISION CHECK
         if (birdRight > pipe2Left && birdLeft < pipe2Right && birdTop < pipe2Bottom && birdBottom > pipe2Top) {
             game.gameOver(); 
+            
         }
 
         // SCORE COUNTER
-        if ( birdLeft ==   pipe1Right) { game.player.score += 1}
-
+        if (birdLeft == pipe1Right) { game.player.score += 1}  
+        document.querySelector('h2 span').innerText = game.player.score; 
+        document.querySelector('#game-over').querySelector('h4 span').innerText = game.player.score; 
+        }
         
-    } 
-
-    
-
+        
     
 }     
