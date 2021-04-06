@@ -48,6 +48,7 @@ class Game {
 
         this.pipesArray.forEach((obstacle) => {
             if (obstacle.collision(this.player) === true){
+                return true;
             }  
         });
         
