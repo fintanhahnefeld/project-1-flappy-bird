@@ -5,6 +5,7 @@ class Game {
         this.floor;
         this.pipeTop;
         this.pipeBottom;
+        this.preGame = true;
     }
 
     setup() {
@@ -25,8 +26,10 @@ class Game {
         this.background.draw();
 
         // add pipes to pipe array and call obstacle.draw()
+        if (this.preGame === false) {
         if (frameCount % 160 === 0) {
             this.pipesArray.push(new Obstacle(this.pipeTop, this.pipeBottom))    
+        }
         }
 
         this.pipesArray.forEach(function(obstacle) {
@@ -52,5 +55,11 @@ class Game {
             }  
         });
         
+
+    }
+
+    gameOver() {
+        noLoop();
+        text('GAME OVER', 110, 200)
     }
 } 

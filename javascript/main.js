@@ -20,6 +20,12 @@ function keyPressed() {
     if (keyCode === 32) {
         // console.log('space bar pressed')
         game.player.jump();
+
+        if (game.preGame === true && keyCode === 32) {
+            game.preGame = false;
+        }
+
     }
+
 }
 

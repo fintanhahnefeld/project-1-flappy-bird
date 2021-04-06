@@ -3,20 +3,41 @@ class Player {
     constructor() {
         this.score = 0;
         this.highscore = 0;
-        this.gravity = 0.4;
+        this.gravity = 0.6;
         this.velocity = 5;
         this.width = 45;
         this.height = 33;
         this.x = 160;
-        this.y = height/5;
+        this.y = 250;
+        this.yspeed = 1;
+    }
+
+    scoreKeeper() {
+        textFont('VT323')
+        stroke(0,0,0)
+        strokeWeight(5)
+        textSize(64);
+        fill(255,255,255)
+        text(this.score, width/2 -16 ,120)
     }
 
     draw() {
-        // gravity
+
+        this.scoreKeeper()
+        
+
+           this.y = this.y + this.yspeed;
+            if (this.y >= 260){this.y = this.y - this.yspeed;}
+            if (this.y <= 240){this.y = this.y + this.yspeed;}
+        
+    
+        // gravity 
+        if (game.preGame === false) {
         this.velocity += this.gravity;
         this.y += this.velocity;
+        }
 
-        // constrain bottom
+        // constrain bottom   
         if (this.y >= height - this.height -70) {
             this.y = height - this.height -70;
         }
@@ -27,6 +48,6 @@ class Player {
 
     jump() {
         // controls jump height
-        this.velocity = - 7  ;
+        this.velocity = - 11.3;
     }
 }
