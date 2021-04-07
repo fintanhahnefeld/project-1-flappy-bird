@@ -29,7 +29,7 @@ class Player {
         if (this.y >= height - this.height -70) {
             this.y = height - this.height -70;
             game.isGameOver = true;
-            sfxOuch.play(); 
+            sfxPow.play(); 
             musicLoop.stop()    
         }
 

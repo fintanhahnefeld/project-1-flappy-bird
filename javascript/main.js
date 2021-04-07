@@ -4,13 +4,15 @@ let sfxJump;
 let sfxSuccess;
 let musicLoop;
 let sfxOuch;
+let sfxPow;
 
 function preload() {
     game.preload();
     soundFormats('mp3','ogg'); 
     sfxJump = loadSound('assets/sfx/up.mp3');
     sfxSuccess = loadSound('assets/sfx/success.mp3');
-    sfxOuch = loadSound('assets/sfx/ouch2.mp3');
+    sfxOuch = loadSound('assets/sfx/ouch4.mp3');
+    sfxPow = loadSound('assets/sfx/ouch3.mp3');
     musicLoop = loadSound('assets/sfx/flappyloop.mp3');
 }
 // 
@@ -20,8 +22,9 @@ function setup() {
     sfxJump.setVolume(1.5);
     sfxSuccess.setVolume(1);
     sfxOuch.setVolume(0.5);
+    sfxPow.setVolume(0.5);
     musicLoop.setVolume(0.2); 
-    // musicLoop.loop();
+    musicLoop.loop();
 } 
 
 function draw() {
