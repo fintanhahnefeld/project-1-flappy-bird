@@ -34,7 +34,7 @@ class Player {
 
         // CONSTRAIN CEILING 
         if (this.y <= 0 - this.height) {
-            this.y = 0 - this.height;
+            this.y = 0  - this.height;
         }
 
         // DRAW PLAYER

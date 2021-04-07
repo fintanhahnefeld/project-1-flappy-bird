@@ -27,24 +27,31 @@ h2 {
 }
 
 #game-over {
-    /* transform: translate(1px,200px); */
-    height: 200px;
-    width: 300px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transform: translate(1px,220px);
+    /* height: 200px;
+    width: 300px; */
     /* border: white 1px solid; */
     /* border-radius: 10px; */
+    padding: 10px 30px;
     /* background-color: red; */
     align-content: center;
     position: absolute;
-    font-size: 60px;
+    font-size: 55px;
     color: white;
-    text-shadow: 0px 1px 10px black;
+    text-shadow: 0px 2px 20px black;
     visibility: hidden;
 }
 
-#game-over h3{
+h3, h4 {
+    margin: 10px;
+} 
+/* #game-over h3{
     transform: translate(20px, 200px);
 }
 
 #game-over h4{
     transform: translate(40px,150px); 
-}
+} */

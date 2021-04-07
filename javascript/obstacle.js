@@ -28,7 +28,7 @@ class Obstacle {
     collision(playerInfo) {
 
         // BIRD // COLLISION ADJUSTMENTS
-        let birdLeft = playerInfo.x -5;
+        let birdLeft = playerInfo.x -7;
         let birdRight = playerInfo.x + playerInfo.width -5; 
         let birdTop = playerInfo.y -2;
         let birdBottom = playerInfo.y + playerInfo.height -2;
@@ -55,7 +55,11 @@ class Obstacle {
 
         // SCORE COUNTER
         if (birdLeft == pipe1Right) { game.player.score += 1}
-        // if (game.isPreGame === true) { game.player.score = 0  }
+        
+        // HIGHSCORE COUNTER
+        if (game.player.score > game.player.highscore) {
+            game.player.highscore = game.player.score;
+        }
 
         }
         

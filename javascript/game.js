@@ -75,7 +75,7 @@ class Game {
         // UPDATE SCORE DISPLAY AND GAME OVER DISPLAY
         document.querySelector('h2 span').innerText = game.player.score; 
         document.querySelector('#game-over').querySelector('h4 span').innerText = game.player.score; 
-
+        document.querySelector('#high-score').querySelector('span').innerText = game.player.highscore; 
     }
     
 
