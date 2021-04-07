@@ -13,7 +13,7 @@ class Background {
         if ( this.imgx <=  - width) {
             this.imgx = 0;
         }
-}
+        }
 }
 
 class Ground {

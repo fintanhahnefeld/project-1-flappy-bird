@@ -18,7 +18,7 @@ class Obstacle {
         //the top pipe y position should be random between -250 and 0
         image(this.pipeTopImg, this.x, this.y -250, this.pipeWidth, this.pipeHeight)
         //the bottom pipe y position should be random between 200 and 450 
-        image(this.pipeBottomImg, this.x, this.y +200, this.pipeWidth, this.pipeHeight)
+        image(this.pipeBottomImg, this.x, this.y +200, this.pipeWidth, this.pipeHeight) 
          
         // pipe speed
         this.x -= 2.5;
@@ -27,11 +27,11 @@ class Obstacle {
 
     collision(playerInfo) {
 
-        // BIRD
-        let birdLeft = playerInfo.x;
-        let birdRight = playerInfo.x + playerInfo.width;
-        let birdTop = playerInfo.y;
-        let birdBottom = playerInfo.y + playerInfo.height;
+        // BIRD // COLLISION ADJUSTMENTS
+        let birdLeft = playerInfo.x -5;
+        let birdRight = playerInfo.x + playerInfo.width -5; 
+        let birdTop = playerInfo.y -2;
+        let birdBottom = playerInfo.y + playerInfo.height -2;
         // TOP PIPE
         let pipe1Left = this.x; 
         let pipe1Right = this.x + this.pipeWidth; 
@@ -45,20 +45,18 @@ class Obstacle {
           
         // TOP PIPE COLLISION CHECK
         if (birdRight > pipe1Left && birdLeft < pipe1Right && birdTop < pipe1Bottom && birdBottom > pipe1Top) { 
-            game.gameOver();
-            
+            game.isGameOver = true;     
         }
         
         // BOTTOM PIPE COLLISION CHECK
         if (birdRight > pipe2Left && birdLeft < pipe2Right && birdTop < pipe2Bottom && birdBottom > pipe2Top) {
-            game.gameOver(); 
-            
+            game.isGameOver = true;             
         }
 
         // SCORE COUNTER
-        if (birdLeft == pipe1Right) { game.player.score += 1}  
-        document.querySelector('h2 span').innerText = game.player.score; 
-        document.querySelector('#game-over').querySelector('h4 span').innerText = game.player.score; 
+        if (birdLeft == pipe1Right) { game.player.score += 1}
+        // if (game.isPreGame === true) { game.player.score = 0  }
+
         }
         
         

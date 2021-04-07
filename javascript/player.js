@@ -13,17 +13,7 @@ class Player {
     }
 
     draw() {
-
-        // if (game.isGameOver === false) {
-        //     textFont('VT323')
-        //     stroke(0,0,0)
-        //     strokeWeight(3)
-        //     textSize(64);
-        //     fill(255,255,255)
-        //     let x = text(this.score, width/2 -16 ,120)
-        //     x.hide();
-        // } 
-        
+     
         // PREGAME HOVER ANIMATION
         this.y = this.y + this.yspeed;
         if (this.y >= 260) {this.y = this.y - this.yspeed;}
@@ -39,12 +29,19 @@ class Player {
         // CONSTRAIN FLOOR  
         if (this.y >= height - this.height -70) {
             this.y = height - this.height -70;
-            game.gameOver();
+            game.isGameOver = true;
         }
+
+        // CONSTRAIN CEILING 
+        if (this.y <= 0 - this.height) {
+            this.y = 0 - this.height;
+        }
+
         // DRAW PLAYER
         image(game.playerImage, this.x, this.y, this.width, this.height);
 
     }
+
 
     jump() {
         //  CONTROL JUMP HEIGHT

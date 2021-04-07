@@ -24,6 +24,7 @@ class Game {
     }
     draw() {
         clear();
+
         this.background.draw();
 
         // ADD PIPES TO PIPEARRAY AND CALL OBSTACLE.DRAW()
@@ -42,10 +43,9 @@ class Game {
         if (obstacle.x < -80) {
             return false
         } else {
-            return true
-            
+            return true            
         }
-    })
+    })  
                 
         this.ground.draw();
         this.player.draw();
@@ -57,19 +57,27 @@ class Game {
             }  
         });
         
+    
+        if (game.isPreGame === true) {
+            document.querySelector('h2 span').style.visibility="hidden";   
+        } else if (game.isPreGame === false) {
+            document.querySelector('h2 span').style.visibility="visible";   
+        }
+
         if (game.isGameOver === true) {
             document.querySelector('h2 span').style.visibility="hidden";   
             document.querySelector('#game-over').style.visibility="visible";   
+        } else if (game.isGameOver === false) {
+            document.querySelector('#game-over').style.visibility="hidden";   
+
         }
 
-    }
-
-    gameOver() {
-        // noLoop();
-        // game.player.div.hide() 
-        //  
-        game.isGameOver = true;
-        // text(' ', width/2 -16 ,120)
+        // UPDATE SCORE DISPLAY AND GAME OVER DISPLAY
+        document.querySelector('h2 span').innerText = game.player.score; 
+        document.querySelector('#game-over').querySelector('h4 span').innerText = game.player.score; 
 
     }
+    
+
+    
 }  
