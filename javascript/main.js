@@ -49,11 +49,9 @@ function keyPressed() {
         game.player.score = 0; 
 
         game.pipesArray.splice(0, game.pipesArray.length);
-        console.log('logging this')
 
         game.isGameOver = false;
         game.isPreGame = true;
-         
          
         game.player.y = 250;
  
