@@ -33,8 +33,8 @@ function draw() {
 
     if (game.isGameOver === false && game.isPreGame === true) {
         loop();
-    } 
-     
+    }
+
     if (game.isGameOver === true) {
         noLoop();
     } 
@@ -45,18 +45,12 @@ function keyPressed() {
 
     // RETURNS TO PREGAME STATE 
     if (game.isGameOver === true && keyCode === 13) {
-
         game.player.score = 0; 
-
         game.pipesArray.splice(0, game.pipesArray.length);
-
         game.isGameOver = false;
-        game.isPreGame = true;
-         
+        game.isPreGame = true;         
         game.player.y = 250;
- 
-        loop()        
-        
+        loop()                
         musicLoop.loop()
         } 
  
@@ -67,16 +61,12 @@ function keyPressed() {
     // ACTIVTES JUMP FUNCTIONALITY AND ACTIVATES OBSTACLES
     if (game.isPreGame === true && keyCode === 32) {
         game.isPreGame = false;
-    }
-
-      
+    }      
     }
 }
 
-// function mousePressed() {
-//     game.player.jump()
-// }
-
-// function reset() {
-
-// }
+// const musicBtn = document.querySelector('#music-switch');
+// musicBtn.addEventListener('click', function(){
+//     musicLoop.stop();
+//     console.log('button clicked')
+// })

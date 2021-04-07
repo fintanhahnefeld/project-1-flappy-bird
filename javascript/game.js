@@ -77,7 +77,5 @@ class Game {
         document.querySelector('#game-over').querySelector('h4 span').innerText = game.player.score; 
         document.querySelector('#high-score').querySelector('span').innerText = game.player.highscore; 
     }
-    
-
-    
+       
 }  
