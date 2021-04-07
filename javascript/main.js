@@ -1,15 +1,27 @@
 const game = new Game();
-// const scoreNumber = document.querySelector('h2').style.visibility='hidden';
 
-// console.log(scoreNumber);
+let sfxJump;
+let sfxSuccess;
+let musicLoop;
+let sfxOuch;
 
 function preload() {
     game.preload();
+    soundFormats('mp3','ogg'); 
+    sfxJump = loadSound('assets/sfx/up.mp3');
+    sfxSuccess = loadSound('assets/sfx/success.mp3');
+    sfxOuch = loadSound('assets/sfx/ouch2.mp3');
+    musicLoop = loadSound('assets/sfx/flappyloop.mp3');
 }
-
+// 
 function setup() {
     createCanvas(450, 580)
-    game.setup(); 
+    game.setup();
+    sfxJump.setVolume(1.5);
+    sfxSuccess.setVolume(1);
+    sfxOuch.setVolume(0.5);
+    musicLoop.setVolume(0.2); 
+    // musicLoop.loop();
 } 
 
 function draw() {
@@ -28,12 +40,7 @@ function draw() {
 
 function keyPressed() {
 
-    // if(keyCode === 13){
-    //     console.log('enter pressed');
-    //     game.pipesArray.splice(0, game.pipesArray.length);
-    // }
-
-    // RETURNS TO PREGAME STATE ?
+    // RETURNS TO PREGAME STATE 
     if (game.isGameOver === true && keyCode === 13) {
 
         game.player.score = 0; 
@@ -47,10 +54,10 @@ function keyPressed() {
          
         game.player.y = 250;
  
-        loop()         
+        loop()        
         
-        
-    } 
+        musicLoop.loop()
+        } 
  
     // SPACE BAR MAKES PLAYER JUMP
     if (keyCode === 32) { 
@@ -65,3 +72,10 @@ function keyPressed() {
     }
 }
 
+// function mousePressed() {
+//     game.player.jump()
+// }
+
+// function reset() {
+
+// }

@@ -13,11 +13,10 @@ class Player {
     }
 
     draw() {
-     
-        // PREGAME HOVER ANIMATION
-        this.y = this.y + this.yspeed;
-        if (this.y >= 260) {this.y = this.y - this.yspeed;}
-        if (this.y <= 240) {this.y = this.y + this.yspeed;}
+        // this.y--;
+        // // PREGAME HOVER ANIMATION    
+        // if (this.y >= 260) {this.y --}
+        // if (this.y <= 220) {this.y ++}
         
     
         // GRAVITY
@@ -30,6 +29,8 @@ class Player {
         if (this.y >= height - this.height -70) {
             this.y = height - this.height -70;
             game.isGameOver = true;
+            sfxOuch.play(); 
+            musicLoop.stop()    
         }
 
         // CONSTRAIN CEILING 
@@ -45,6 +46,9 @@ class Player {
 
     jump() {
         //  CONTROL JUMP HEIGHT
-        this.velocity = - 11;
+        if (game.isGameOver !== true) {
+        this.velocity = - 10;
+        sfxJump.play();
+        }
     }
 }
