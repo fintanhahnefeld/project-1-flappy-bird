@@ -8,16 +8,19 @@ class Player {
         this.width = 45;
         this.height = 33;
         this.x = 160;
-        this.y = 250;
-        this.yspeed = 1;
+        this.y = 230;
+        this.speed = 0.5;
     }
-
+ 
     draw() {
-        // this.y--;
-        // // PREGAME HOVER ANIMATION    
-        // if (this.y >= 260) {this.y --}
-        // if (this.y <= 220) {this.y ++}
+         
+        if (game.isPreGame === true) {
+        this.y = this.y + this.speed;
+          
+        if (this.y >= 250) {this.speed *= -1} 
+        if (this.y < 230) {this.speed *= -1} 
         
+        }
     
         // GRAVITY
         if (game.isPreGame === false) {

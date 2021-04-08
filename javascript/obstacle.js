@@ -16,9 +16,9 @@ class Obstacle {
     draw() {
         
         //the top pipe y position should be random between -250 and 0
-        image(this.pipeTopImg, this.x, this.y -250, this.pipeWidth, this.pipeHeight)
+        image(this.pipeTopImg, this.x, this.y -260, this.pipeWidth, this.pipeHeight)
         //the bottom pipe y position should be random between 200 and 450 
-        image(this.pipeBottomImg, this.x, this.y +200, this.pipeWidth, this.pipeHeight) 
+        image(this.pipeBottomImg, this.x, this.y +210, this.pipeWidth, this.pipeHeight) 
          
         // pipe speed
         this.x -= 2.5;
@@ -35,13 +35,13 @@ class Obstacle {
         // TOP PIPE
         let pipe1Left = this.x; 
         let pipe1Right = this.x + this.pipeWidth; 
-        let pipe1Top = this.y -250;
-        let pipe1Bottom = this.y + this.pipeHeight -250;
+        let pipe1Top = this.y -260;
+        let pipe1Bottom = this.y + this.pipeHeight -260;
         // BOTTOM PIPE
         let pipe2Left = this.x; 
         let pipe2Right = this.x + this.pipeWidth; 
-        let pipe2Top = this.y + 200;
-        let pipe2Bottom = this.y + this.pipeHeight +200;
+        let pipe2Top = this.y + 210;
+        let pipe2Bottom = this.y + this.pipeHeight +210;
           
         // TOP PIPE COLLISION CHECK
         if (birdRight > pipe1Left && birdLeft < pipe1Right && birdTop < pipe1Bottom && birdBottom > pipe1Top) { 

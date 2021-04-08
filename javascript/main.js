@@ -49,7 +49,7 @@ function keyPressed() {
         game.pipesArray.splice(0, game.pipesArray.length);
         game.isGameOver = false;
         game.isPreGame = true;         
-        game.player.y = 250;
+        game.player.y = 230;
         loop()                
         musicLoop.loop()
         } 
