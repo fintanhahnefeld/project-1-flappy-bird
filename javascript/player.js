@@ -12,8 +12,8 @@ class Player {
         this.speed = 0.5;
     }
  
-    draw() {
-         
+    draw() {   
+        // PREGAME HOVER ANIMATION   
         if (game.isPreGame === true) {
         this.y = this.y + this.speed;
           
@@ -30,7 +30,7 @@ class Player {
 
         // CONSTRAIN FLOOR  
         if (this.y >= height - this.height -70) {
-            this.y = height - this.height -70;
+            this.y = height - this.height -70; 
             game.isGameOver = true;
             sfxPow.play(); 
             musicLoop.stop()    
@@ -43,7 +43,6 @@ class Player {
 
         // DRAW PLAYER
         image(game.playerImage, this.x, this.y, this.width, this.height);
-
     }
 
 

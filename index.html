@@ -10,22 +10,32 @@
     <script src="assets/p5.sound.js"></script>
 </head>
 <body>
-<h1>Flappy Bird</h1>
-<h2><span>0</span></h2>
+    <h1>Flappy Bird</h1>
+    <h2><span>0</span></h2>
 
-<!-- <div class="container"> -->
-<div id="game-over">
-<h3>GAME OVER</h3>
-<h4>SCORE: <span>0</span></h4>
-<h4 id="high-score">BEST: <span>0</span></h4>
-<!-- <button>RESTART</button> -->
-</div>
-<!-- </div> -->
-<h5 id="h5-1">USE THE SPACE KEY TO CONTROL FABY</h5>
-<h5 id="h5-2">PRESS THE RETURN KEY TO RESTART</h5>
+    <div id="game-over">
+        <h3>GAME OVER</h3>
+        <h4>SCORE: <span>0</span></h4>
+        <h4 id="high-score">BEST: <span>0</span></h4>
+    </div>
+    
+    <h5 id="h5-1">USE THE SPACE KEY TO CONTROL FABY</h5>
+    <h5 id="h5-2">PRESS THE RETURN KEY TO RESTART</h5>
 
-<!-- <button id="music-switch">MUSIC OFF/ON</button>
-<button id="sfx-switch">SFX OFF/ON</button> -->
+    <div id="info">    
+        <div>
+            <p>Music Off/On</p>
+            <label class="switch">
+            <input type="checkbox" id="music-switch" onfocus="this.blur()" tabindex="-1">
+            <span class="slider"></span>
+            </label>
+        </div>  
+
+        <a href="https://en.wikipedia.org/wiki/Flappy_Bird" target="_blank">More Info</a> 
+        
+    </div>
+
+    <p id="foot">Clone by Fintan Hahnefeld</p>
 
     <script src="javascript/obstacle.js"></script>   
     <script src="javascript/background.js"></script>

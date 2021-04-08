@@ -65,8 +65,13 @@ function keyPressed() {
     }
 }
 
-// const musicBtn = document.querySelector('#music-switch');
-// musicBtn.addEventListener('click', function(){
-//     musicLoop.stop();
-//     console.log('button clicked')
-// })
+const musicBtn = document.querySelector('#music-switch');
+musicBtn.addEventListener('click', function(){
+    if (musicBtn.checked){
+    console.log('button checked')
+        musicLoop.setVolume(0);
+    } else {
+        musicLoop.setVolume(0.2);
+    console.log('button unchecked')
+    }    
+})

@@ -4,11 +4,11 @@ class Background {
     }
 
     draw() {
-        // city background
+        // CITY BACKGROUND
         image(game.backgroundImage, this.imgx, 0, width, height -70);
         image(game.backgroundImage, this.imgx + width, 0, width, height -70);
 
-        // moving city background
+        // MOVING CITY BACKGROUND
         this.imgx -= 0.2;
         if ( this.imgx <=  - width) {
             this.imgx = 0;
@@ -21,7 +21,7 @@ class Ground {
         this.floorx = 0;
     }
     draw() {
-        // lines
+        // FLOOR LINES
         stroke('#272b30')
         strokeWeight(2)
         line(0, height -69, width, height -69)
@@ -29,17 +29,17 @@ class Ground {
         strokeWeight(2)
         line(0, height -67, width, height -67)
         
-        // floor
+        // FLOOR
         image(game.floor, this.floorx, height - 66, width, 12)
         image(game.floor, this.floorx + width, height - 66, width, 12)
         
-        // moving floor
+        // MOVING FLOOR
         this.floorx -= 2;
         if ( this.floorx <=  - width) {
             this.floorx = 0;
         } 
  
-        // more lines
+        // MORE LINES
         stroke('#48771b')
         strokeWeight(2)
         line(0, height -53, width, height -53)
@@ -47,11 +47,9 @@ class Ground {
         strokeWeight(2)
         line(0, height -51, width, height -51)
 
-        // bottom floor
+        // BOTTOM FLOOR
         fill('#e0dbaa')
         noStroke();
         rect(0, height -50, width, height)
-
-
     }
 }  
