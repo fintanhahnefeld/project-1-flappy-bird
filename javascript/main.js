@@ -41,7 +41,7 @@ function draw() {
     
 }
 
-function keyPressed() {
+function keyPressed(e) {
 
     // RETURNS TO PREGAME STATE 
     if (game.isGameOver === true && keyCode === 13) {
@@ -57,12 +57,18 @@ function keyPressed() {
     // SPACE BAR MAKES PLAYER JUMP
     if (keyCode === 32) { 
         game.player.jump();
+    }
                 
     // ACTIVTES JUMP FUNCTIONALITY AND ACTIVATES OBSTACLES
     if (game.isPreGame === true && keyCode === 32) {
         game.isPreGame = false;
     }      
+
+    // DEACTIVATES DEFAULT SCROLLING BEHAVIOUR OF SPACE BAR
+    if(keyCode === 32 && e.target == document.body) {
+        e.preventDefault();
     }
+    
 }
 
 const musicBtn = document.querySelector('#music-switch');
