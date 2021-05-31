@@ -12,7 +12,7 @@ You can find out more about the original game [here](https://en.wikipedia.org/wi
 ## Technical challenges
 
 My biggest challenge was to write the mathematical logic that calculates collisions between the player and the obstacles.
-This was difficult because the obstacles should always appear at random heights and always have the same distance between them for the gap.
+This was difficult because the obstacles should always appear at random heights and always have the same distance between them for the gap that the player must fly through.
 Below is a demonstration of some the code that I implemented to solve this:
 
 ```
