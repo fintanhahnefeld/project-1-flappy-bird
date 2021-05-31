@@ -6,7 +6,7 @@ This project was made as part of a web development bootcamp at IRONHACK Berlin i
 It is built using [p5js](https://p5js.org/), with HTML, CSS and Javascript technologies, and applies 
 the principles of object oriented programming.
 
-I chose flappy bird because it was a game I enjoyed to play on mobile back in 2014 when it was first released.
+I chose to clone flappy bird because it was a game I enjoyed to play on mobile back in 2014 when it was first released.
 You can find out more about the original game [here](https://en.wikipedia.org/wiki/Flappy_Bird).
 
 ## Technical challenges
